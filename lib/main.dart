@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: customColor),
+      theme: ThemeData(
+          primarySwatch: customColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity),
       debugShowCheckedModeBanner: false,
       home: BrandPage(),
     );
