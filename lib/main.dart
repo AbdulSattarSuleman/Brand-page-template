@@ -1,4 +1,5 @@
 import 'package:brand_template/brand-page/brand_page.dart';
+import 'package:brand_template/product_page/product.dart';
 import 'package:brand_template/style.dart';
 import 'package:flutter/material.dart';
 
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primarySwatch: customColor,
+          scaffoldBackgroundColor: Colors.white,
+          primarySwatch: Colors.deepPurple,
           visualDensity: VisualDensity.adaptivePlatformDensity),
       debugShowCheckedModeBanner: false,
-      home: BrandPage(),
+      home: const BrandPage(),
     );
   }
 }

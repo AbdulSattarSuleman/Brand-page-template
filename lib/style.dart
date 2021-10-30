@@ -5,23 +5,39 @@ import 'package:google_fonts/google_fonts.dart';
 TextStyle titleStyle = GoogleFonts.oxygen(
   fontSize: 30,
   fontWeight: FontWeight.w800,
-  letterSpacing: -2,
+  letterSpacing: -1,
 );
 
 Color creamColor = const Color(0xfff3e6dd);
 Color darkCream = const Color(0xffede1d7);
-TextStyle brandPurpleColor = const TextStyle(color: Color(0xff443d8b));
+Color brandPurpleColor = const Color(0xff443d8b);
 
 TextStyle brandName = const TextStyle(
   color: Colors.black,
   fontSize: 16,
   fontWeight: FontWeight.w500,
 );
+TextStyle brandtitle = const TextStyle(
+  color: Colors.black,
+  fontSize: 20,
+  fontWeight: FontWeight.w500,
+);
+TextStyle bestSeller = GoogleFonts.oxygen(
+  fontSize: 24,
+  fontWeight: FontWeight.w800,
+  letterSpacing: -1,
+);
 
 TextStyle authorName = const TextStyle(
   color: Colors.grey,
   fontSize: 14,
 );
+
+TextStyle brandText = const TextStyle(
+  color: Colors.grey,
+  fontSize: 18,
+);
+TextStyle buttonFont = const TextStyle(fontSize: 20);
 Map<int, Color> colorCodes = {
   50: const Color.fromRGBO(68, 61, 139, .1),
   100: const Color.fromRGBO(68, 61, 139, .2),

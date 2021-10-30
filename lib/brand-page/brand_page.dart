@@ -1,242 +1,44 @@
 import 'package:brand_template/brand-page/header.dart';
+import 'package:brand_template/brand-page/slider_one.dart';
+import 'package:brand_template/brand-page/slider_two.dart';
 import 'package:brand_template/main.dart';
 import 'package:brand_template/style.dart';
 import 'package:flutter/material.dart';
 
-class BrandPage extends StatelessWidget {
+class BrandPage extends StatefulWidget {
   const BrandPage({Key? key}) : super(key: key);
 
   @override
+  State<BrandPage> createState() => _BrandPageState();
+}
+
+class _BrandPageState extends State<BrandPage> {
+  @override
   Widget build(BuildContext context) {
-    String card2title = "ART UNLEASHED";
-    String card2author = "Stefano milik";
     return Scaffold(
       backgroundColor: Colors.white,
+      bottomNavigationBar:
+          BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
+        BottomNavigationBarItem(
+          label: '',
+          icon: Icon(Icons.home_filled),
+        ),
+        BottomNavigationBarItem(
+          label: '',
+          icon: Icon(Icons.bookmark_border),
+        ),
+        BottomNavigationBarItem(
+          label: '',
+          icon: Icon(Icons.card_giftcard_outlined),
+        ),
+        BottomNavigationBarItem(label: '', icon: Icon(Icons.ac_unit_outlined)),
+      ]),
       body: SafeArea(
         child: ListView(
-          children: [
+          children: const [
             Header(),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 20, 20, 40),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Popular Now',
-                    style: titleStyle,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                      height: 300,
-                      child: ListView(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            // 1st Slider Card
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 160,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.33,
-                                    child: Container(
-                                      constraints: BoxConstraints.expand(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.4,
-                                        // height: 150,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            // begin: Alignment.topCenter,
-                                            // end: Alignment.bottomLeft,
-                                            stops: [0.4, 0.5],
-                                            tileMode: TileMode.clamp,
-                                            colors: [
-                                              creamColor,
-                                              Colors.deepPurple
-                                            ]),
-                                        // image: DecorationImage(
-                                        //   image: AssetImage('assets/images/mag1.png'),
-                                        //   fit: BoxFit.cover,
-                                        // ),
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(10)),
-                                      ),
-                                      child: Stack(
-                                        children: const [
-                                          Positioned(
-                                              top: 30,
-                                              right: 10,
-                                              child: Text(
-                                                'Creative\nHustle',
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              )),
-                                          Positioned(
-                                            child: Text('Ramen Albert',
-                                                style: TextStyle(
-                                                    color: Colors.white)),
-                                            bottom: 10,
-                                            right: 10,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Creative Hustle',
-                                    style: brandName,
-                                  ),
-                                  Text(
-                                    'Ramen Albert',
-                                    style: authorName,
-                                  )
-                                ],
-                              ),
-                            ),
-                            // 2nd Slider Card
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 160,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.33,
-                                    child: Container(
-                                      constraints: BoxConstraints.expand(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.4,
-                                        // height: 150,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            // begin: Alignment.topCenter,
-                                            // end: Alignment.bottomLeft,
-                                            stops: [0.4, 0.5],
-                                            tileMode: TileMode.clamp,
-                                            colors: [
-                                              creamColor,
-                                              Colors.deepPurple
-                                            ]),
-                                        // image: DecorationImage(
-                                        //   image: AssetImage('assets/images/mag1.png'),
-                                        //   fit: BoxFit.cover,
-                                        // ),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          Positioned(
-                                              top: 30,
-                                              right: 10,
-                                              child: Text(
-                                                card2title,
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              )),
-                                          Positioned(
-                                            child: Text(card2author,
-                                                style: TextStyle(
-                                                    color: Colors.white)),
-                                            bottom: 10,
-                                            right: 10,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Creative Hustle',
-                                    style: brandName,
-                                  ),
-                                  Text(
-                                    'Ramen Albert',
-                                    style: authorName,
-                                  )
-                                ],
-                              ),
-                            ),
-                            // 3rd Slider Card
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 160,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.33,
-                                    child: Container(
-                                      constraints: BoxConstraints.expand(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.5,
-                                        // height: 140,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            // begin: Alignment.topCenter,
-                                            // end: Alignment.bottomLeft,
-                                            stops: [0.4, 0.5],
-                                            tileMode: TileMode.clamp,
-                                            colors: [
-                                              creamColor,
-                                              Colors.deepPurple
-                                            ]),
-                                        // image: DecorationImage(
-                                        //   image: AssetImage('assets/images/mag1.png'),
-                                        //   fit: BoxFit.cover,
-                                        // ),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                      ),
-                                      child: Stack(
-                                        children: const [
-                                          Positioned(
-                                              top: 30,
-                                              right: 10,
-                                              child: Text(
-                                                'Creative\nHustle',
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              )),
-                                          Positioned(
-                                            child: Text('Ramen Albert',
-                                                style: TextStyle(
-                                                    color: Colors.white)),
-                                            bottom: 10,
-                                            right: 10,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Creative Hustle',
-                                    style: brandName,
-                                  ),
-                                  Text(
-                                    'Ramen Albert',
-                                    style: authorName,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ]))
-                ],
-              ),
-            )
+            SliderOne(),
+            SliderTwo(),
           ],
         ),
       ),

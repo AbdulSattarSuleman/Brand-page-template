@@ -11,7 +11,7 @@ class Header extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
             Icon(
-              Icons.menu_open_rounded,
+              Icons.short_text_sharp,
               color: Colors.black,
               size: 30,
             ),
